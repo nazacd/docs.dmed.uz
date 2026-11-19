@@ -196,7 +196,7 @@
     $('langFlag').style.background = flag(l);
     $('title').textContent = t.title;
     $('open').textContent = t.open;
-    $('hintText').textContent = t.hint;
+    if ($('hintText')) $('hintText').textContent = t.hint;
     $('err').textContent = t.err;
     $('okTitle').textContent = t.okT;
     $('okText').textContent = t.okP;
@@ -271,7 +271,7 @@
     inputs.forEach(function(i){ i.value=''; }); refresh(); inputs[0].focus();
   });
 
-  $('y').textContent = new Date().getFullYear();
+  if ($('y')) $('y').textContent = new Date().getFullYear();
   setLang(lang);
   inputs[0].focus();
 })();
